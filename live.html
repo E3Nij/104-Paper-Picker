@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Viewer — MCJ 104 Assignment Picker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Live Viewer</h1>
+    <p>MCJ 104 — Journalistic Writing Skills (Bengali), Dhaka University</p>
+    <nav class="site-nav">
+      <a href="index.html">Submit</a>
+      <a href="live.html">Live Viewer</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="toolbar">
+      <input type="text" id="search-box" placeholder="Search name, roll, newspaper, or date..." />
+      <select id="sort-select">
+        <option value="roll">Sort by Roll</option>
+        <option value="name">Sort by Name</option>
+        <option value="timestamp">Sort by Submission Time</option>
+      </select>
+      <button type="button" class="secondary" id="print-btn">Print</button>
+      <button type="button" class="secondary" id="csv-btn">Download CSV</button>
+    </div>
+
+    <p class="status-line" id="status-line">Loading...</p>
+
+    <div class="table-wrap">
+      <table id="entries-table">
+        <thead>
+          <tr id="table-head-row">
+            <!-- Filled in by live.js -->
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Filled in by live.js -->
+        </tbody>
+      </table>
+      <div class="empty-state" id="empty-state" style="display:none;">
+        No submissions yet.
+      </div>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="live.js"></script>
+</body>
+</html>

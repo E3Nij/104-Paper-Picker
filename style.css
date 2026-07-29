@@ -1,0 +1,247 @@
+/* style.css
+   Minimal, professional styling shared by index.html and live.html.
+   No animations, no icon fonts, no color noise. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+header.site-header {
+  border-bottom: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+header.site-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+header.site-header p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+nav.site-nav {
+  margin-top: 10px;
+}
+
+nav.site-nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+nav.site-nav a:hover {
+  background: #f2f2f2;
+}
+
+/* ---- Form ---- */
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+.field-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.field {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: 2px solid #333;
+  outline-offset: 1px;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+button:hover {
+  background: #333;
+}
+
+button.secondary {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+button.secondary:hover {
+  background: #f2f2f2;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.message {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.message.error {
+  display: block;
+  background: #fdecea;
+  border: 1px solid #e8a5a0;
+  color: #7a1f16;
+}
+
+.message.success {
+  display: block;
+  background: #eaf6ec;
+  border: 1px solid #a6d8ac;
+  color: #1e5c26;
+}
+
+/* ---- Live viewer ---- */
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.toolbar input[type="text"] {
+  flex: 1 1 220px;
+}
+
+.toolbar select {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.status-line {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #f5f5f5;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #eee;
+}
+
+.empty-state {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+}
+
+/* ---- Print ---- */
+
+@media print {
+  header.site-header,
+  .toolbar,
+  .actions,
+  nav.site-nav,
+  .status-line {
+    display: none !important;
+  }
+
+  body, .page {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  table {
+    font-size: 11px;
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 600px) {
+  .field-row {
+    flex-direction: column;
+  }
+}
