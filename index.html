@@ -1,152 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCJ 104 — Assignment Picker</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <h1>MCJ 104 — Journalistic Writing Skills (Bengali)</h1>
-    <p>Department of Mass Communication and Journalism, University of Dhaka</p>
-    <nav class="site-nav">
-      <a href="index.html">Submit</a>
-      <a href="live.html">Live Viewer</a>
-    </nav>
-  </header>
 
-  <main class="page">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MCJ 104 — Assignment Picker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <h1>MCJ 104 Assignment Picker</h1>
+
     <p>
-      Enter one newspaper and one date (DD/MM/YYYY) for each decade
-      below. No two students may pick the same newspaper + date
-      combination.
+
+        Journalistic Writing Skills (Bengali)<br>
+
+        Department of Mass Communication & Journalism<br>
+
+        University of Dhaka
+
     </p>
 
-    <form id="entry-form" novalidate>
-      <fieldset>
-        <legend>Student Information</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="field">
-            <label for="roll">Roll Number</label>
-            <input type="text" id="roll" name="roll" required />
-          </div>
+    <nav class="site-nav">
+
+        <a href="index.html">
+            Submit Assignment
+        </a>
+
+        <a href="live.html">
+            Live Viewer
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="page">
+
+<section class="hero">
+
+    <h2>
+        Assignment Submission Portal
+    </h2>
+
+    <p>
+
+        Select one newspaper issue from every required decade.
+        Each newspaper and publication date combination can only be selected once,
+        ensuring every student receives a unique assignment.
+
+    </p>
+
+</section>
+
+<section class="info-card">
+
+    <h3>
+        Submission Guidelines
+    </h3>
+
+    <ul>
+
+        <li>Enter your full name exactly as recorded in class.</li>
+
+        <li>Enter your correct roll number.</li>
+
+        <li>Select one newspaper issue for every decade.</li>
+
+        <li>Use the date format <strong>DD/MM/YYYY</strong>.</li>
+
+        <li>Duplicate newspaper and publication date combinations are automatically rejected.</li>
+
+        <li>Review your information before submitting.</li>
+
+    </ul>
+
+</section>
+
+<form id="entry-form" novalidate>
+
+<fieldset>
+
+<legend>
+
+Student Information
+
+</legend>
+
+<div class="field-row">
+
+<div class="field">
+
+<label for="name">
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Enter your full name"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="roll">
+
+Roll Number
+
+</label>
+
+<input
+type="text"
+id="roll"
+name="roll"
+placeholder="Example: 60"
+required
+>
+
+</div>
+
+</div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<fieldset data-period="1960">
+
+<legend>
+
+1960s (1960–1969)
+
+</legend>
+
+<p class="period-note">
+
+Choose any newspaper published between 1960 and 1969.
+
+</p>
+
+<div class="field-row">
+
+<div class="field">
+
+<label for="1960-newspaper">
+
+Newspaper Name
+
+</label>
+
+<input
+type="text"
+id="1960-newspaper"
+name="1960Newspaper"
+placeholder="Example: Dainik Pakistan"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="1960-date">
+
+Publication Date
+
+</label>
+
+<input
+type="text"
+id="1960-date"
+name="1960Date"
+placeholder="Example: 15/03/1965"
+pattern="\d{2}/\d{2}/\d{4}"
+inputmode="numeric"
+maxlength="10"
+required
+>
+
+</div>
+
+</div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<fieldset data-period="1970">
+
+<legend>
+
+1970s (1970–1979)
+
+</legend>
+
+<p class="period-note">
+
+Choose any newspaper published between 1970 and 1979.
+
+</p>
+
+<div class="field-row">
+
+<div class="field">
+
+<label for="1970-newspaper">
+
+Newspaper Name
+
+</label>
+
+<input
+type="text"
+id="1970-newspaper"
+name="1970Newspaper"
+placeholder="Example: The Bangladesh Observer"
+required
+>
+
+</div>
+
+<div class="field">
+
+<label for="1970-date">
+
+Publication Date
+
+</label>
+
+<input
+type="text"
+id="1970-date"
+name="1970Date"
+placeholder="Example: 21/02/1972"
+pattern="\d{2}/\d{2}/\d{4}"
+inputmode="numeric"
+maxlength="10"
+required
+>
+
+</div>
+
+</div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<fieldset data-period="1980">
+
+    <legend>
+
+        1980s (1980–1989)
+
+    </legend>
+
+    <p class="period-note">
+
+        Choose any newspaper published between 1980 and 1989.
+
+    </p>
+
+    <div class="field-row">
+
+        <div class="field">
+
+            <label for="1980-newspaper">
+
+                Newspaper Name
+
+            </label>
+
+            <input
+                type="text"
+                id="1980-newspaper"
+                name="1980Newspaper"
+                placeholder="Example: The Daily Ittefaq"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <!-- One fieldset per decade. data-period matches CONFIG.PERIODS keys
-           in config.js and the column names in GoogleAppsScript.gs -->
-      <fieldset data-period="1960">
-        <legend>1960s</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="1960-newspaper">Newspaper</label>
-            <input type="text" id="1960-newspaper" name="1960Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="1960-date">Issue Date</label>
-            <input type="text" id="1960-date" name="1960Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+        <div class="field">
+
+            <label for="1980-date">
+
+                Publication Date
+
+            </label>
+
+            <input
+                type="text"
+                id="1980-date"
+                name="1980Date"
+                placeholder="Example: 12/08/1984"
+                pattern="\d{2}/\d{2}/\d{4}"
+                inputmode="numeric"
+                maxlength="10"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <fieldset data-period="1970">
-        <legend>1970s</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="1970-newspaper">Newspaper</label>
-            <input type="text" id="1970-newspaper" name="1970Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="1970-date">Issue Date</label>
-            <input type="text" id="1970-date" name="1970Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+    </div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<fieldset data-period="1990">
+
+    <legend>
+
+        1990s (1990–1999)
+
+    </legend>
+
+    <p class="period-note">
+
+        Choose any newspaper published between 1990 and 1999.
+
+    </p>
+
+    <div class="field-row">
+
+        <div class="field">
+
+            <label for="1990-newspaper">
+
+                Newspaper Name
+
+            </label>
+
+            <input
+                type="text"
+                id="1990-newspaper"
+                name="1990Newspaper"
+                placeholder="Example: Janakantha"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <fieldset data-period="1980">
-        <legend>1980s</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="1980-newspaper">Newspaper</label>
-            <input type="text" id="1980-newspaper" name="1980Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="1980-date">Issue Date</label>
-            <input type="text" id="1980-date" name="1980Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+        <div class="field">
+
+            <label for="1990-date">
+
+                Publication Date
+
+            </label>
+
+            <input
+                type="text"
+                id="1990-date"
+                name="1990Date"
+                placeholder="Example: 16/12/1996"
+                pattern="\d{2}/\d{2}/\d{4}"
+                inputmode="numeric"
+                maxlength="10"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <fieldset data-period="1990">
-        <legend>1990s</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="1990-newspaper">Newspaper</label>
-            <input type="text" id="1990-newspaper" name="1990Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="1990-date">Issue Date</label>
-            <input type="text" id="1990-date" name="1990Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+    </div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<fieldset data-period="2000">
+
+    <legend>
+
+        2000s (2000–2009)
+
+    </legend>
+
+    <p class="period-note">
+
+        Choose any newspaper published between 2000 and 2009.
+
+    </p>
+
+    <div class="field-row">
+
+        <div class="field">
+
+            <label for="2000-newspaper">
+
+                Newspaper Name
+
+            </label>
+
+            <input
+                type="text"
+                id="2000-newspaper"
+                name="2000Newspaper"
+                placeholder="Example: Prothom Alo"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <fieldset data-period="2000">
-        <legend>2000s</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="2000-newspaper">Newspaper</label>
-            <input type="text" id="2000-newspaper" name="2000Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="2000-date">Issue Date</label>
-            <input type="text" id="2000-date" name="2000Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+        <div class="field">
+
+            <label for="2000-date">
+
+                Publication Date
+
+            </label>
+
+            <input
+                type="text"
+                id="2000-date"
+                name="2000Date"
+                placeholder="Example: 05/09/2005"
+                pattern="\d{2}/\d{2}/\d{4}"
+                inputmode="numeric"
+                maxlength="10"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <fieldset data-period="2010">
-        <legend>2010s</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="2010-newspaper">Newspaper</label>
-            <input type="text" id="2010-newspaper" name="2010Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="2010-date">Issue Date</label>
-            <input type="text" id="2010-date" name="2010Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+    </div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<fieldset data-period="2010">
+
+    <legend>
+
+        2010s (2010–2019)
+
+    </legend>
+
+    <p class="period-note">
+
+        Choose any newspaper published between 2010 and 2019.
+
+    </p>
+
+    <div class="field-row">
+
+        <div class="field">
+
+            <label for="2010-newspaper">
+
+                Newspaper Name
+
+            </label>
+
+            <input
+                type="text"
+                id="2010-newspaper"
+                name="2010Newspaper"
+                placeholder="Example: Kaler Kantho"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <fieldset data-period="2020">
-        <legend>2020–2026</legend>
-        <div class="field-row">
-          <div class="field">
-            <label for="2020-newspaper">Newspaper</label>
-            <input type="text" id="2020-newspaper" name="2020Newspaper" required />
-          </div>
-          <div class="field">
-            <label for="2020-date">Issue Date</label>
-            <input type="text" id="2020-date" name="2020Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
-          </div>
+        <div class="field">
+
+            <label for="2010-date">
+
+                Publication Date
+
+            </label>
+
+            <input
+                type="text"
+                id="2010-date"
+                name="2010Date"
+                placeholder="Example: 26/03/2016"
+                pattern="\d{2}/\d{2}/\d{4}"
+                inputmode="numeric"
+                maxlength="10"
+                required
+            >
+
         </div>
-      </fieldset>
 
-      <div class="actions">
-        <button type="submit" id="submit-btn">Submit</button>
-      </div>
+    </div>
 
-      <div id="message" class="message" role="alert"></div>
-    </form>
-  </main>
+</fieldset>
 
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+<!-- ===================================================== -->
+
+<fieldset data-period="2020">
+
+    <legend>
+
+        2020–2026
+
+    </legend>
+
+    <p class="period-note">
+
+        Choose any newspaper published between 2020 and 2026.
+
+    </p>
+
+    <div class="field-row">
+
+        <div class="field">
+
+            <label for="2020-newspaper">
+
+                Newspaper Name
+
+            </label>
+
+            <input
+                type="text"
+                id="2020-newspaper"
+                name="2020Newspaper"
+                placeholder="Example: The Daily Star"
+                required
+            >
+
+        </div>
+
+        <div class="field">
+
+            <label for="2020-date">
+
+                Publication Date
+
+            </label>
+
+            <input
+                type="text"
+                id="2020-date"
+                name="2020Date"
+                placeholder="Example: 30/07/2026"
+                pattern="\d{2}/\d{2}/\d{4}"
+                inputmode="numeric"
+                maxlength="10"
+                required
+            >
+
+        </div>
+
+    </div>
+
+</fieldset>
+
+<!-- ===================================================== -->
+
+<section class="submit-section">
+
+    <h2>
+
+        Ready to Submit?
+
+    </h2>
+
+    <p>
+
+        Please review all newspaper names and publication dates carefully before submitting.
+        Duplicate newspaper and publication date combinations will not be accepted.
+
+    </p>
+
+    <div class="actions">
+
+        <button
+            type="submit"
+            id="submit-btn">
+
+            Submit Assignment Choices
+
+        </button>
+
+    </div>
+
+    <div
+        id="message"
+        class="message"
+        role="alert">
+
+    </div>
+
+</section>
+
+</form>
+
+<footer class="site-footer">
+
+    <div class="footer-content">
+
+        <h3>
+
+            MCJ 104 Assignment Picker
+
+        </h3>
+
+        <p>
+
+            Department of Mass Communication & Journalism<br>
+            University of Dhaka
+
+        </p>
+
+        <p class="footer-note">
+
+            This portal helps students select unique newspaper issues from each required decade.
+            Duplicate newspaper and publication date combinations are automatically prevented
+            to ensure fair assignment distribution.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</main>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+
 </body>
+
 </html>
