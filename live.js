@@ -123,10 +123,22 @@ function renderTable(entries) {
       const td = document.createElement("td");
       const sheetCol = sheetColumnFor(col);
       let value = entry[sheetCol];
-      if (col === "Timestamp" && value) {
-        const d = new Date(value);
-        value = isNaN(d.getTime()) ? value : d.toLocaleString();
-      }
+
+// Format all newspaper date columns as DD/MM/YYYY
+if (col.endsWith(" Date") && col !== "Timestamp" && value) {
+  const d = new Date(value);
+  value = isNaN(d.getTime())
+    ? value
+    : d.toLocaleDateString("en-GB");
+}
+
+// Format timestamp separately
+if (col === "Timestamp" && value) {
+  const d = new Date(value);
+  value = isNaN(d.getTime())
+    ? value
+    : d.toLocaleString("en-GB");
+}
       td.textContent = value == null ? "" : value;
       tr.appendChild(td);
     });
