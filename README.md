@@ -123,8 +123,15 @@ no other configuration is required.
 A submission is rejected if any of its seven newspaper+date pairs
 matches a newspaper+date pair **already saved by any other student, in
 any of the seven periods** (newspaper name comparison is
-case-insensitive; date comparison is exact). Roll numbers must also be
-unique — a roll that has already submitted cannot submit again.
+case-insensitive; date comparison is exact string match). Roll numbers
+must also be unique — a roll that has already submitted cannot submit
+again.
+
+Dates are entered as free text in **DD/MM/YYYY** format (e.g.
+`15/03/1965`) and validated on both the client and server to be a real
+calendar date within the matching decade. The newspaper field is a
+plain free-text box — students can type any newspaper name; there is
+no dropdown or list restricting the input.
 
 ## Notes on CORS
 

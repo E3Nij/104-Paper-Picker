@@ -18,8 +18,9 @@
 
   <main class="page">
     <p>
-      Select one newspaper and one date for each decade below. No two
-      students may pick the same newspaper + date combination.
+      Enter one newspaper and one date (DD/MM/YYYY) for each decade
+      below. No two students may pick the same newspaper + date
+      combination.
     </p>
 
     <form id="entry-form" novalidate>
@@ -44,11 +45,11 @@
         <div class="field-row">
           <div class="field">
             <label for="1960-newspaper">Newspaper</label>
-            <input type="text" id="1960-newspaper" name="1960Newspaper" list="newspaper-list" required />
+            <input type="text" id="1960-newspaper" name="1960Newspaper" required />
           </div>
           <div class="field">
             <label for="1960-date">Issue Date</label>
-            <input type="date" id="1960-date" name="1960Date" min="1960-01-01" max="1969-12-31" required />
+            <input type="text" id="1960-date" name="1960Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
@@ -58,11 +59,11 @@
         <div class="field-row">
           <div class="field">
             <label for="1970-newspaper">Newspaper</label>
-            <input type="text" id="1970-newspaper" name="1970Newspaper" list="newspaper-list" required />
+            <input type="text" id="1970-newspaper" name="1970Newspaper" required />
           </div>
           <div class="field">
             <label for="1970-date">Issue Date</label>
-            <input type="date" id="1970-date" name="1970Date" min="1970-01-01" max="1979-12-31" required />
+            <input type="text" id="1970-date" name="1970Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
@@ -72,11 +73,11 @@
         <div class="field-row">
           <div class="field">
             <label for="1980-newspaper">Newspaper</label>
-            <input type="text" id="1980-newspaper" name="1980Newspaper" list="newspaper-list" required />
+            <input type="text" id="1980-newspaper" name="1980Newspaper" required />
           </div>
           <div class="field">
             <label for="1980-date">Issue Date</label>
-            <input type="date" id="1980-date" name="1980Date" min="1980-01-01" max="1989-12-31" required />
+            <input type="text" id="1980-date" name="1980Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
@@ -86,11 +87,11 @@
         <div class="field-row">
           <div class="field">
             <label for="1990-newspaper">Newspaper</label>
-            <input type="text" id="1990-newspaper" name="1990Newspaper" list="newspaper-list" required />
+            <input type="text" id="1990-newspaper" name="1990Newspaper" required />
           </div>
           <div class="field">
             <label for="1990-date">Issue Date</label>
-            <input type="date" id="1990-date" name="1990Date" min="1990-01-01" max="1999-12-31" required />
+            <input type="text" id="1990-date" name="1990Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
@@ -100,11 +101,11 @@
         <div class="field-row">
           <div class="field">
             <label for="2000-newspaper">Newspaper</label>
-            <input type="text" id="2000-newspaper" name="2000Newspaper" list="newspaper-list" required />
+            <input type="text" id="2000-newspaper" name="2000Newspaper" required />
           </div>
           <div class="field">
             <label for="2000-date">Issue Date</label>
-            <input type="date" id="2000-date" name="2000Date" min="2000-01-01" max="2009-12-31" required />
+            <input type="text" id="2000-date" name="2000Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
@@ -114,11 +115,11 @@
         <div class="field-row">
           <div class="field">
             <label for="2010-newspaper">Newspaper</label>
-            <input type="text" id="2010-newspaper" name="2010Newspaper" list="newspaper-list" required />
+            <input type="text" id="2010-newspaper" name="2010Newspaper" required />
           </div>
           <div class="field">
             <label for="2010-date">Issue Date</label>
-            <input type="date" id="2010-date" name="2010Date" min="2010-01-01" max="2019-12-31" required />
+            <input type="text" id="2010-date" name="2010Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
@@ -128,28 +129,14 @@
         <div class="field-row">
           <div class="field">
             <label for="2020-newspaper">Newspaper</label>
-            <input type="text" id="2020-newspaper" name="2020Newspaper" list="newspaper-list" required />
+            <input type="text" id="2020-newspaper" name="2020Newspaper" required />
           </div>
           <div class="field">
             <label for="2020-date">Issue Date</label>
-            <input type="date" id="2020-date" name="2020Date" min="2020-01-01" max="2026-12-31" required />
+            <input type="text" id="2020-date" name="2020Date" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" inputmode="numeric" maxlength="10" required />
           </div>
         </div>
       </fieldset>
-
-      <!-- Suggestions only; students may type any newspaper name. -->
-      <datalist id="newspaper-list">
-        <option value="Prothom Alo"></option>
-        <option value="The Daily Star"></option>
-        <option value="Ittefaq"></option>
-        <option value="Bangladesh Observer"></option>
-        <option value="Azad"></option>
-        <option value="Sangbad"></option>
-        <option value="Janakantha"></option>
-        <option value="Kaler Kantho"></option>
-        <option value="Samakal"></option>
-        <option value="Bhorer Kagoj"></option>
-      </datalist>
 
       <div class="actions">
         <button type="submit" id="submit-btn">Submit</button>

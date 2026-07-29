@@ -50,8 +50,33 @@ function collectFormData() {
   return data;
 }
 
+// Matches a DD/MM/YYYY date, e.g. 05/03/1965.
+const DATE_PATTERN = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+
 /**
- * Basic client-side validation: every field required, and no
+ * Parses a "DD/MM/YYYY" string. Returns { day, month, year } if the
+ * string is a real calendar date, or null otherwise (wrong format,
+ * or a date that does not exist such as 31/02/2020).
+ */
+function parseDDMMYYYY(value) {
+  const match = DATE_PATTERN.exec(value);
+  if (!match) return null;
+
+  const day = parseInt(match[1], 10);
+  const month = parseInt(match[2], 10);
+  const year = parseInt(match[3], 10);
+
+  if (month < 1 || month > 12) return null;
+
+  const daysInMonth = new Date(year, month, 0).getDate();
+  if (day < 1 || day > daysInMonth) return null;
+
+  return { day: day, month: month, year: year };
+}
+
+/**
+ * Basic client-side validation: every field required, dates must be
+ * valid DD/MM/YYYY dates within the matching decade, and no
  * newspaper+date pair repeated within this single submission.
  * Returns an error string, or null if the data is valid.
  */
@@ -66,6 +91,14 @@ function validateFormData(data) {
 
     if (!newspaper || !date) {
       return "Please fill in both the newspaper and date for the " + period.label + " period.";
+    }
+
+    const parsed = parseDDMMYYYY(date);
+    if (!parsed) {
+      return "The date for the " + period.label + " period must be a valid date in DD/MM/YYYY format.";
+    }
+    if (parsed.year < period.minYear || parsed.year > period.maxYear) {
+      return "The date for the " + period.label + " period must fall within " + period.minYear + "–" + period.maxYear + ".";
     }
 
     const key = newspaper.toLowerCase() + "|" + date;

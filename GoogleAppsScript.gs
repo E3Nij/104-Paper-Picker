@@ -28,6 +28,49 @@ const SHEET_NAME = "Entries";
 // with CONFIG.PERIODS in config.js.
 const PERIODS = ["1960", "1970", "1980", "1990", "2000", "2010", "2020"];
 
+// Valid year range for each period's date field. Keep in sync with
+// CONFIG.PERIODS (minYear/maxYear) in config.js.
+const PERIOD_YEAR_RANGES = {
+  "1960": { min: 1960, max: 1969 },
+  "1970": { min: 1970, max: 1979 },
+  "1980": { min: 1980, max: 1989 },
+  "1990": { min: 1990, max: 1999 },
+  "2000": { min: 2000, max: 2009 },
+  "2010": { min: 2010, max: 2019 },
+  "2020": { min: 2020, max: 2026 }
+};
+
+/**
+ * Validates a "DD/MM/YYYY" string against the given period's valid
+ * year range. Returns null if valid, or an error message if not.
+ */
+function validateDateForPeriod_(dateStr, periodKey) {
+  const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(dateStr);
+  if (!match) {
+    return "Date must be in DD/MM/YYYY format.";
+  }
+
+  const day = parseInt(match[1], 10);
+  const month = parseInt(match[2], 10);
+  const year = parseInt(match[3], 10);
+
+  if (month < 1 || month > 12) {
+    return "Date must be in DD/MM/YYYY format.";
+  }
+
+  const daysInMonth = new Date(year, month, 0).getDate();
+  if (day < 1 || day > daysInMonth) {
+    return "Date must be in DD/MM/YYYY format.";
+  }
+
+  const range = PERIOD_YEAR_RANGES[periodKey];
+  if (range && (year < range.min || year > range.max)) {
+    return "Date must fall within " + range.min + "–" + range.max + ".";
+  }
+
+  return null;
+}
+
 // The exact column headers, in order, as required by the assignment.
 const HEADERS = [
   "Name",
@@ -149,6 +192,15 @@ function doPost(e) {
           error: "Newspaper and date are both required for the " + p + "s period."
         });
       }
+
+      const dateError = validateDateForPeriod_(dateRaw, p);
+      if (dateError) {
+        return jsonResponse_({
+          success: false,
+          error: dateError + " (" + p + "s period)"
+        });
+      }
+
       selections[p] = { newspaper: newspaperRaw, date: dateRaw };
     }
 
