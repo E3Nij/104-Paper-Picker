@@ -133,28 +133,16 @@ select{
 
 .site-header{
 
-    position:sticky;
-
-    top:0;
-
-    z-index:999;
-
     padding:
-
         22px
         28px;
 
-    background:
-        rgba(255,255,255,.94);
-
-    backdrop-filter:blur(18px);
+    background:var(--surface);
 
     border-bottom:
-
         1px solid var(--border);
 
     box-shadow:
-
         var(--shadow-sm);
 }
 
@@ -1317,7 +1305,7 @@ fieldset{
 
     .site-header{
 
-        padding:18px;
+        padding:16px 28px;
     }
 
     .site-header h1{
